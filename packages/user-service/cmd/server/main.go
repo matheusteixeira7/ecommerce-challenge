@@ -2,13 +2,13 @@ package main
 
 import (
 	"fmt"
-	config2 "github.com/matheusteixeira/ecommerce-challenge/config"
+	"github.com/matheusteixeira7/ecommerce-challenge/packages/user-service/config"
 	"log"
 	"net/http"
 )
 
 func main() {
-	env, err := config2.LoadConfig()
+	env, err := config.LoadConfig()
 	if err != nil {
 		panic(err)
 	}
