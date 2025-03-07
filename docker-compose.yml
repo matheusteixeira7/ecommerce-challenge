@@ -1,0 +1,58 @@
+version: '3.9'
+
+services:
+  user-service:
+    build:
+      context: ./packages/user-service
+      dockerfile: Dockerfile
+    ports:
+      - "8080:8080"
+    volumes:
+      - ./packages/user-service:/app
+    develop:
+      watch:
+        - action: sync
+          path: ./packages/user-service
+          target: /app
+        - action: rebuild
+          path: ./packages/user-service/go.mod
+        - action: rebuild
+          path: ./packages/user-service/go.sum
+    depends_on:
+      - user-db
+    restart: unless-stopped
+
+  product-service:
+    build:
+      context: ./packages/product-service
+      dockerfile: Dockerfile
+    ports:
+      - "8081:8081"
+    volumes:
+      - ./packages/product-service:/app
+    develop:
+      watch:
+        - action: sync
+          path: ./packages/product-service
+          target: /app
+        - action: rebuild
+          path: ./packages/product-service/go.mod
+        - action: rebuild
+          path: ./packages/product-service/go.sum
+    restart: unless-stopped
+
+  user-db:
+    image: postgres:16.8-alpine3.20
+    container_name: user_db
+    restart: always
+    environment:
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: postgres
+      POSTGRES_DB: userdb
+    ports:
+      - "5433:5432"
+    volumes:
+      - user_pgdata:/var/lib/postgresql/data
+
+volumes:
+  user_pgdata:

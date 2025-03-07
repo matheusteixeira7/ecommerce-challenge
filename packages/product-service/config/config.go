@@ -1,9 +1,7 @@
 package config
 
 import (
-	"fmt"
 	"github.com/spf13/viper"
-	"os"
 )
 
 type Conf struct {
@@ -12,18 +10,14 @@ type Conf struct {
 
 func LoadConfig() (*Conf, error) {
 	var cfg *Conf
-	rootDir, err := os.Getwd()
-	if err != nil {
-		return nil, fmt.Errorf("erro ao obter diretório root: %v", err)
-	}
 
 	viper.SetConfigName("app_config")
 	viper.SetConfigType("env")
-	viper.AddConfigPath(rootDir)
-	viper.SetConfigFile(rootDir + "/.env")
+	viper.AddConfigPath("..")
+	viper.SetConfigFile(".env")
 	viper.AutomaticEnv()
 
-	err = viper.ReadInConfig()
+	err := viper.ReadInConfig()
 	if err != nil {
 		panic(err)
 	}

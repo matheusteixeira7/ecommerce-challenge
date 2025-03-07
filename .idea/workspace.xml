@@ -5,20 +5,22 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="325c0190-e11d-47ad-8423-98d54b2deb6f" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/cmd/server/main.go" beforeDir="false" afterPath="$PROJECT_DIR$/packages/user-service/cmd/server/main.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/config/config.go" beforeDir="false" afterPath="$PROJECT_DIR$/packages/user-service/config/config.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/data.md" beforeDir="false" afterPath="$PROJECT_DIR$/docs/README3.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/go.mod" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/go.sum" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/internal/module/address/entity/address.go" beforeDir="false" afterPath="$PROJECT_DIR$/packages/user-service/internal/module/address/entity/address.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/internal/module/address/entity/address_test.go" beforeDir="false" afterPath="$PROJECT_DIR$/packages/user-service/internal/module/address/entity/address_test.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/internal/module/user/entity/user.go" beforeDir="false" afterPath="$PROJECT_DIR$/packages/user-service/internal/module/user/entity/user.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/plan.md" beforeDir="false" afterPath="$PROJECT_DIR$/docs/README2.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/go.work.sum" beforeDir="false" afterPath="$PROJECT_DIR$/go.work.sum" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/packages/product-service/config/config.go" beforeDir="false" afterPath="$PROJECT_DIR$/packages/product-service/config/config.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/packages/user-service/config/config.go" beforeDir="false" afterPath="$PROJECT_DIR$/packages/user-service/config/config.go" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="JavaScript File" />
+      </list>
+    </option>
   </component>
   <component name="GOROOT" url="file:///usr/local/go" />
   <component name="Git.Settings">
@@ -43,10 +45,10 @@
     &quot;RunOnceActivity.go.migrated.go.modules.settings&quot;: &quot;true&quot;,
     &quot;RunOnceActivity.go.modules.go.list.on.any.changes.was.set&quot;: &quot;true&quot;,
     &quot;bazel.project.detector.is.bazel.project&quot;: &quot;true&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;feat/workspace&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
     &quot;go.import.settings.migrated&quot;: &quot;true&quot;,
     &quot;go.sdk.automatically.set&quot;: &quot;true&quot;,
-    &quot;last_opened_file_path&quot;: &quot;/home/matheus/www/ecommerce-challenge/packages/product-service&quot;,
+    &quot;last_opened_file_path&quot;: &quot;/home/matheus/www/ecommerce-challenge/packages/user-service/cmd/server&quot;,
     &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
     &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
     &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
@@ -55,7 +57,9 @@
 }</component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/packages/user-service/cmd/server" />
       <recent name="$PROJECT_DIR$/packages/product-service" />
+      <recent name="$PROJECT_DIR$/packages/user-service" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$/docs" />
