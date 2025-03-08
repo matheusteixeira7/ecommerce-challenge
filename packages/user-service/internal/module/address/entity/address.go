@@ -20,8 +20,7 @@ type Address struct {
 func (a *Address) Validate() error {
 	err := validate.Struct(a)
 	if err != nil {
-		errors := err.(validator.ValidationErrors)
-		return errors
+		return err.(validator.ValidationErrors)
 	}
 	return nil
 }

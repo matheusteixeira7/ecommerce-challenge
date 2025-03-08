@@ -3,7 +3,7 @@ version: '3.9'
 services:
   user-service:
     build:
-      context: ./packages/user-service
+      context: packages/user-service
       dockerfile: Dockerfile
     ports:
       - "8080:8080"
@@ -12,19 +12,19 @@ services:
     develop:
       watch:
         - action: sync
-          path: ./packages/user-service
+          path: packages/user-service
           target: /app
         - action: rebuild
-          path: ./packages/user-service/go.mod
+          path: packages/user-service/go.mod
         - action: rebuild
-          path: ./packages/user-service/go.sum
+          path: packages/user-service/go.sum
     depends_on:
       - user-db
     restart: unless-stopped
 
   product-service:
     build:
-      context: ./packages/product-service
+      context: packages/product-service
       dockerfile: Dockerfile
     ports:
       - "8081:8081"
@@ -33,12 +33,12 @@ services:
     develop:
       watch:
         - action: sync
-          path: ./packages/product-service
+          path: packages/product-service
           target: /app
         - action: rebuild
-          path: ./packages/product-service/go.mod
+          path: packages/product-service/go.mod
         - action: rebuild
-          path: ./packages/product-service/go.sum
+          path: packages/product-service/go.sum
     restart: unless-stopped
 
   user-db:
