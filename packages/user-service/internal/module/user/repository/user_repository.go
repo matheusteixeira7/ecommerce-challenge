@@ -18,7 +18,7 @@ func NewUserRepository(db *sql.DB) *UserRepository {
 }
 
 func (r *UserRepository) Save(user *entity.User) (uuid.UUID, error) {
-	query := `INSERT INTO users (id, name, email, password, role_id, created_at, updated_at, deleted_at) VALUES ($1, $2, $3, $4, $5, $6) RETURNING id`
+	query := `INSERT INTO users (id, name, email, password, role_id, created_at, updated_at, deleted_at) VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING id`
 	err := r.db.QueryRow(query, user.ID, user.Name, user.Email, user.Password, user.RoleID, user.CreatedAt, user.UpdatedAt, user.DeletedAt).Scan(&user.ID)
 	if err != nil {
 		return uuid.Nil, err
