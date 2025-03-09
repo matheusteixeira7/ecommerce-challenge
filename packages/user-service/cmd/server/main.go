@@ -2,9 +2,15 @@ package main
 
 import (
 	"database/sql"
+	"errors"
 	"fmt"
+	"github.com/golang-migrate/migrate/v4"
+	"github.com/golang-migrate/migrate/v4/database/postgres"
+	_ "github.com/golang-migrate/migrate/v4/source/file"
+	_ "github.com/lib/pq"
 	"github.com/matheusteixeira7/ecommerce-challenge/packages/user-service/config"
 	"github.com/matheusteixeira7/ecommerce-challenge/packages/user-service/infra/database"
+
 	"log"
 	"net/http"
 )
@@ -16,7 +22,7 @@ func main() {
 	}
 
 	// open db connection
-	conn, err := database.OpenConn(config.DBHost, config.DBPort, config.DBUser, config.DBPassword, config.DBName, config.DBSSLMode)
+	conn, err := database.OpenConn(env.DB_HOST, env.DB_PORT, env.DB_USER, env.DB_PASSWORD, env.DB_NAME, env.DB_SSL_MODE)
 	if err != nil {
 		panic(err)
 	}
@@ -33,12 +39,16 @@ func main() {
 		log.Fatalf("Failed to create driver: %v", err)
 	}
 	m, err := migrate.NewWithDatabaseInstance(
-		"file://../../infra/database/migrations",
+		"file://infra/database/migrations",
 		"postgres", driver)
-	m.Up()
 	if err != nil {
+		log.Fatalf("Failed to create migration instance: %v", err)
+	}
+
+	if err := m.Up(); err != nil && !errors.Is(err, migrate.ErrNoChange) {
 		log.Fatalf("Failed to run migrations: %v", err)
 	}
+
 	log.Println("Successfully run migrations.")
 
 	router := http.NewServeMux()

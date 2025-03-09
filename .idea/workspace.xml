@@ -6,13 +6,16 @@
   <component name="ChangeListManager">
     <list default="true" id="325c0190-e11d-47ad-8423-98d54b2deb6f" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Makefile" beforeDir="false" afterPath="$PROJECT_DIR$/Makefile" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/docker-compose.yml" beforeDir="false" afterPath="$PROJECT_DIR$/docker-compose.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/go.work.sum" beforeDir="false" afterPath="$PROJECT_DIR$/go.work.sum" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/packages/user-service/Dockerfile" beforeDir="false" afterPath="$PROJECT_DIR$/packages/user-service/Dockerfile" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/packages/user-service/Makefile" beforeDir="false" afterPath="$PROJECT_DIR$/packages/user-service/Makefile" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/packages/user-service/cmd/server/main.go" beforeDir="false" afterPath="$PROJECT_DIR$/packages/user-service/cmd/server/main.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/packages/user-service/config/config.go" beforeDir="false" afterPath="$PROJECT_DIR$/packages/user-service/config/config.go" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/packages/user-service/go.mod" beforeDir="false" afterPath="$PROJECT_DIR$/packages/user-service/go.mod" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/packages/user-service/go.sum" beforeDir="false" afterPath="$PROJECT_DIR$/packages/user-service/go.sum" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/packages/user-service/internal/module/address/entity/address.go" beforeDir="false" afterPath="$PROJECT_DIR$/packages/user-service/internal/module/address/entity/address.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/packages/user-service/internal/module/user/entity/user.go" beforeDir="false" afterPath="$PROJECT_DIR$/packages/user-service/internal/module/user/entity/user.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/packages/user-service/infra/database/migrations/000001_create_users_table.down.sql" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/packages/user-service/infra/database/migrations/000001_create_users_table.up.sql" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -62,6 +65,11 @@
     "node.js.selected.package.eslint": "(autodetect)",
     "nodejs_package_manager_path": "npm",
     "settings.editor.selected.configurable": "preferences.pluginManager"
+  },
+  "keyToStringList": {
+    "DatabaseDriversLRU": [
+      "postgresql"
+    ]
   }
 }]]></component>
   <component name="RecentsManager">

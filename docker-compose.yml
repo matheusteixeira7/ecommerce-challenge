@@ -19,7 +19,7 @@ services:
         - action: rebuild
           path: packages/user-service/go.sum
     depends_on:
-      - user-db
+      - user_db
     restart: unless-stopped
 
   product-service:
@@ -41,16 +41,16 @@ services:
           path: packages/product-service/go.sum
     restart: unless-stopped
 
-  user-db:
+  user_db:
     image: postgres:16.8-alpine3.20
     container_name: user_db
     restart: always
     environment:
       POSTGRES_USER: postgres
       POSTGRES_PASSWORD: postgres
-      POSTGRES_DB: userdb
+      POSTGRES_DB: user_db
     ports:
-      - "5433:5432"
+      - "5432:5432"
     volumes:
       - user_pgdata:/var/lib/postgresql/data
 

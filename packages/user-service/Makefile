@@ -1,3 +1,5 @@
+MIGRATIONS_DIR=infra/database/migrations
+
 test-user-service:
 	gotestsum --format=short -- -failfast -coverprofile=coverage.out ./...
 
@@ -14,7 +16,8 @@ dev:
 	go run ./cmd/server/main.go
 
 create-migration:
-	migrate create -ext sql -dir infra/database/migrations -seq $(name)
+	@read -p "Enter migration name: " name; \
+	migrate create -ext sql -dir $(MIGRATIONS_DIR) -seq "$$name"
 
 migrate-up:
 	migrate -path ./infra/database/migrations -database "postgres://postgres:postgres@localhost:5432/customerdb?sslmode=disable" -verbose up

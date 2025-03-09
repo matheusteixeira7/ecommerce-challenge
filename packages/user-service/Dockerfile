@@ -15,4 +15,6 @@ RUN CGO_ENABLED=0 GOOS=linux GOARCH=amd64 go build -trimpath -ldflags="-s -w" -o
 FROM scratch
 COPY --from=builder /go-app /go-app
 COPY --from=builder /app/.env /.env
+COPY --from=builder /app/infra/database/migrations /infra/database/migrations
+
 ENTRYPOINT ["/go-app"]
