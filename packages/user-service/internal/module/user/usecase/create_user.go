@@ -18,18 +18,18 @@ func NewCreateUserUseCase(repository repository.UserRepositoryInterface) *UserRe
 }
 
 func (r *UserRepository) Execute(input dto.CreateUserInputDTO) (*dto.CreateUserOutputDTO, error) {
-	user, err := entity.NewUser(input.Name, input.Email, input.Password, input.Role)
-	if err != nil {
-		return nil, err
-	}
-
-	existingUser, err := r.repository.FindByEmail(user.Email)
+	existingUser, err := r.repository.FindByEmail(input.Email)
 	if err != nil {
 		return nil, err
 	}
 
 	if existingUser != nil {
 		return nil, errors.New("email already in use")
+	}
+
+	user, err := entity.NewUser(input.Name, input.Email, input.Password, input.Role)
+	if err != nil {
+		return nil, err
 	}
 
 	userID, err := r.repository.Save(user)
